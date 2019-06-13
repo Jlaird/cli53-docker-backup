@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache git go make ;\
+RUN apk add --no-cache git go make openssl ca-certificates ;\
     go get github.com/barnybug/cli53 ;\
     cd $GOPATH/src/github.com/barnybug/cli53 ;\
     make install ;\
