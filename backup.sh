@@ -11,7 +11,7 @@ for domain in $(cli53 list -format json | jq '.[].Name' |sed -e 's/^"//' -e 's/"
 
 done
 
-aws s3 cp route53-domains.tar s3://cygnusbackups/route53/
+aws s3 cp route53-domains.tar "s3://$BUCKET/route53/"
 
 # Clean up
 rm -fr route53-domains.tar domains/
